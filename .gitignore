@@ -29,3 +29,15 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# OSX
+*~
+*.DS_Store
+*.swp
+*.out
+
+# Windows
+Thumbs.db
+
+# dotenv-rails
+.env*
