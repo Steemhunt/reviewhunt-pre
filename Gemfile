@@ -11,6 +11,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails'
 gem 'bugsnag'
+gem 'faraday'
+gem 'steem-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
