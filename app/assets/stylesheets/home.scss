@@ -1,3 +1,5 @@
+@import "./mixins";
+
 body {
   background-color: #000;
   color: #fff;
@@ -12,15 +14,29 @@ body {
     width: 380px;
     height: 380px;
     object-fit: contain;
+
+    @include responsive(mobile) {
+      width: 280px;
+      height: 280px;
+    }
   }
 
   h3 {
     margin-top: -120px;
     margin-bottom: 0;
+
+    @include responsive(mobile) {
+      margin-top: -70px;
+    }
   }
 
   h1 {
     margin: 1em 0;
+
+    @include responsive(mobile) {
+      font-size: 3rem;
+      margin: 1em 0 2em 0;
+    }
   }
 
   .actions {
@@ -32,7 +48,120 @@ body {
   .main-img {
     margin-top: 100px;
     width: 1020px;
-    height: 566px;
+    max-width: 96%;
+    height: auto;
+  }
+}
+
+.review-reinvented {
+  margin: 9.375rem 0;
+  padding: 5.625rem 0;
+  text-align: center;
+  background-color: #151515;
+  background-image: linear-gradient(107deg, #151515, #242632);
+
+  h2 {
+    margin: 0.8em 0 0 0;
+  }
+
+  h3 {
+    margin: 0.3em 0 0 0;
+  }
+
+  .logo-circle-2 {
+    width: 150px;
+    height: 150px;
     object-fit: contain;
+
+    @include responsive(mobile) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.padded {
+  max-width: 1280px;
+  padding: 0 2%;
+  margin: 0 auto;
+
+  @include responsive(tablet) {
+    max-width: 1000px;
+  }
+}
+
+.intro {
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 150px;
+
+  @include responsive(landscape) {
+    margin-bottom: 100px;
+  }
+
+  @include responsive(mobile) {
+    margin-bottom: 80px;
+  }
+
+  &.left {
+    .text-box {
+      float: left;
+    }
+    .feature-image {
+      float: right;
+      margin-left: 50px;
+    }
+  }
+  &.right {
+    .text-box {
+      float: right;
+    }
+    .feature-image {
+      float: left;
+      margin-right: 50px;
+    }
+  }
+
+  .text-box {
+    text-align: left;
+    vertical-align: top;
+    display: inline-block;
+    width: 420px;
+    font-size: 3rem;
+    line-height: 1.2;
+
+    @include responsive(landscape) {
+      float: none !important;
+      width: 80%;
+      text-align: center;
+    }
+
+    @include responsive(mobile) {
+      font-size: 2.5rem;
+      width: 100%;
+    }
+  }
+
+  .feature-image {
+    vertical-align: top;
+    display: inline-block;
+    width: 650px;
+    height: 485px;
+    object-fit: contain;
+
+    @include responsive(tablet) {
+      width: 480px;
+      height: auto;
+    }
+
+    @include responsive(landscape) {
+      float: none !important;
+      width: 80%;
+      margin: 3rem 0 0 0 !important;
+    }
+
+    @include responsive(mobile) {
+      width: 100%;
+    }
   }
 }

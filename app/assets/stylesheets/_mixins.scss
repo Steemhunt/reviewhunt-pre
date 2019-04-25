@@ -3,7 +3,10 @@
     @media only screen and (max-width: 320px) { @content; }
   }
   @else if $media == mobile {
-    @media only screen and (max-width: 425px) { @content; }
+    @media only screen and (max-width: 480px) { @content; }
+  }
+  @else if $media == landscape {
+    @media only screen and (max-width: 1024px) { @content; }
   }
   @else if $media == tablet { // wide mode
     @media only screen and (max-width: 1200px) { @content; }

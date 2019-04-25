@@ -15,11 +15,11 @@ html, body {
   }
 
   @include responsive(mobile) {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   @include responsive(tiny) {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -53,11 +53,17 @@ a {
   color: $primary;
 }
 
+.grey {
+  color: $grey;
+}
+
 .thin {
   font-weight: 300;
 }
 
 .btn {
+  cursor: pointer;
+  outline: none;
   padding: 0.625em 2.5em;
   font-size: 1.375rem;
   border: 1px solid $primary;
