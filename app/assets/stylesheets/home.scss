@@ -1,0 +1,38 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.main {
+  margin-top: 100px;
+  text-align: center;
+
+  .logo-circle {
+    margin-top: -135px;
+    width: 380px;
+    height: 380px;
+    object-fit: contain;
+  }
+
+  h3 {
+    margin-top: -120px;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    margin: 1em 0;
+  }
+
+  .actions {
+    button {
+      margin: 0 0.5625rem;
+    }
+  }
+
+  .main-img {
+    margin-top: 100px;
+    width: 1020px;
+    height: 566px;
+    object-fit: contain;
+  }
+}

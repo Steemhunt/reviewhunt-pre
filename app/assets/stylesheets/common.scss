@@ -1,0 +1,72 @@
+@import "./mixins";
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:700|Roboto:300,400,900);
+
+$primary: #08f6f6;
+$grey: #8b9699;
+$light_grey: #c6c6c6;
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  @include responsive(tablet) {
+    font-size: 14px;
+  }
+
+  @include responsive(mobile) {
+    font-size: 13px;
+  }
+
+  @include responsive(tiny) {
+    font-size: 12px;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+
+  &.sans {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+  }
+}
+
+h1 {
+  font-size: 4rem; // 64
+}
+
+h2 {
+  font-size: 3rem; // 48
+}
+
+h3, h4 {
+  font-size: 2em; // 32
+}
+
+a {
+  text-decoration: none;
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.btn {
+  padding: 0.625em 2.5em;
+  font-size: 1.375rem;
+  border: 1px solid $primary;
+  border-radius: 50vh;
+  background-color: transparent;
+  color: $primary;
+
+  &.btn-primary {
+    background-color: $primary;
+    color: #000;
+  }
+}

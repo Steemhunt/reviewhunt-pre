@@ -1,0 +1,17 @@
+@mixin responsive($media) {
+  @if $media == tiny {
+    @media only screen and (max-width: 320px) { @content; }
+  }
+  @else if $media == mobile {
+    @media only screen and (max-width: 425px) { @content; }
+  }
+  @else if $media == tablet { // wide mode
+    @media only screen and (max-width: 1200px) { @content; }
+  }
+  @else if $media == ipadpro { // wide mode
+    @media only screen and (max-width: 1400px) { @content; }
+  }
+  @else {
+    @media only screen and (max-width: $media) { @content; }
+  }
+}
