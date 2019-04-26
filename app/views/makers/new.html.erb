@@ -1,0 +1,35 @@
+<div class="main">
+  <a href="/"><%= image_tag 'logo-circle.svg', class: 'logo-circle' %></a>
+  <h3 class="primary-color">REVIEWHUNT PRE SIGN-UP</h3>
+  <h1 class="less-margin">MAKER</h1>
+</div>
+
+<%= form_for @maker, html: { class: 'form' } do |f| %>
+  <h2 class="sans">General Information</h2>
+  <%= f.text_field :company_name, placeholder: 'Name of Company', class: 'input-text' %>
+  <%= f.text_field :name, placeholder: 'Full Name', class: 'input-text' %>
+  <%= f.email_field :email, placeholder: 'Email', class: 'input-text' %>
+  <%= f.text_field :position, placeholder: 'Position at you Company', class: 'input-text' %>
+
+  <h2 class="sans">What category does your company/business belong to?</h2>
+  <%= f.select :business_category, Maker::BUSINESS_CATEGORIES, prompt: '- Choose Category -' %>
+
+  <h2 class="sans">How much is your monthly marketing budget?</h2>
+  <%= f.number_field :monthly_budget, placeholder: 'Monthly budget in USD terms', class: 'input-text' %>
+
+  <% if @maker.errors.any? %>
+    <div class="error">
+      <%= @maker.errors.full_messages.first %>
+    </div>
+  <% end %>
+
+  <input type="submit" value="SUBMIT" class="btn btn-primary"/>
+<% end %>
+
+<div class="back-button">
+  <a href="/">BACK TO HOME</a>
+</div>
+
+<script>
+  const choices = new Choices('#maker_business_category');
+</script>

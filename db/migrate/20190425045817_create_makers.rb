@@ -5,6 +5,7 @@ class CreateMakers < ActiveRecord::Migration[5.2]
       t.string :company_name, null: false
       t.string :name, null: false
       t.string :position, null: false
+      t.string :business_category, null: false
       t.decimal :monthly_budget, null: false
 
       t.timestamps

@@ -1,13 +1,10 @@
 @import "./mixins";
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:700|Roboto:300,400,900);
 
-$primary: #08f6f6;
-$grey: #8b9699;
-$light_grey: #c6c6c6;
-
 html, body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  line-height: 1.2;
   font-weight: 400;
 
   @include responsive(tablet) {
@@ -35,6 +32,10 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 4rem; // 64
+
+  &.bigger {
+    font-size: 5rem;
+  }
 }
 
 h2 {
@@ -47,6 +48,7 @@ h3, h4 {
 
 a {
   text-decoration: none;
+  color: $primary;
 }
 
 .primary-color {
@@ -57,11 +59,25 @@ a {
   color: $grey;
 }
 
+.error {
+  color: #f5222d;
+}
+
+.normal {
+  font-weight: 400 !important;
+}
+
 .thin {
-  font-weight: 300;
+  font-weight: 300 !important;
+}
+
+.grey-gradient {
+  background-color: #151515;
+  background-image: linear-gradient(107deg, #151515, #242632);
 }
 
 .btn {
+  display: inline-block;
   cursor: pointer;
   outline: none;
   padding: 0.625em 2.5em;
@@ -70,9 +86,14 @@ a {
   border-radius: 50vh;
   background-color: transparent;
   color: $primary;
+  text-align: center;
 
   &.btn-primary {
     background-color: $primary;
     color: #000;
   }
+}
+
+input {
+  outline: none;
 }

@@ -22,7 +22,7 @@ body {
   }
 
   h3 {
-    margin-top: -120px;
+    margin-top: -105px;
     margin-bottom: 0;
 
     @include responsive(mobile) {
@@ -33,6 +33,10 @@ body {
   h1 {
     margin: 1em 0;
 
+    &.less-margin {
+      margin: 0.3em 0;
+    }
+
     @include responsive(mobile) {
       font-size: 3rem;
       margin: 1em 0 2em 0;
@@ -40,8 +44,21 @@ body {
   }
 
   .actions {
-    button {
+    .btn {
       margin: 0 0.5625rem;
+    }
+  }
+
+  .thank-you {
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    font-size: 1.5rem;
+
+    .tick {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-right: 0.3rem;
+      object-fit: contain;
     }
   }
 
@@ -51,14 +68,103 @@ body {
     max-width: 96%;
     height: auto;
   }
+} // .main
+
+.padded {
+  max-width: 1200px;
+  padding: 0 2%;
+  margin: 0 auto;
+
+  @include responsive(tablet) {
+    max-width: 1000px;
+  }
+}
+
+.maker-stats, .hunter-stats {
+  margin-top: 9.375rem;
+  padding-top: 9.375rem;
+  padding-bottom: 9.375rem;
+
+  h1 {
+    max-width: 800px;
+    margin: 0;
+  }
+
+  .split {
+    margin-top: 5rem;
+    overflow: hidden;
+
+    .left, .right {
+      width: 50%;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .x-2-credit-btn, .m-dashboard {
+      width: 70%;
+      height: auto;
+    }
+
+    .m-dashboard {
+      float: right;
+    }
+
+    .second {
+      h3 {
+        line-height: 1.35;
+      }
+      p {
+        line-height: 1.67;
+        font-size: 1.5rem;
+      }
+      .btn {
+        margin: 1rem 0 3rem 0;
+      }
+    }
+
+    table {
+      width: 100%;
+      background-color: #121217;
+      color: #9b9b9b;
+      border: 0;
+      border-radius: 8px;
+      border-spacing: 0;
+
+      th, td {
+        text-align: left;
+        border-bottom: 1px solid #3e3f42;
+        padding: 0.8rem 1rem;
+      }
+
+      tr:last-child > td {
+        border-bottom: none;
+      }
+    }
+  } // .split
+} // .maker-stats, .hunter-stats
+
+.hunter-stats {
+  margin-top: 0;
+
+  .progress {
+    height: 8px;
+    border-radius: 50vh;
+    margin: 1rem 0 0.3125rem 0;
+    background-color: $primary;
+    background-image: linear-gradient(89deg, #00f198, #08f6f6);
+  }
 }
 
 .review-reinvented {
-  margin: 9.375rem 0;
+  margin-bottom: 9.375rem;
   padding: 5.625rem 0;
   text-align: center;
-  background-color: #151515;
-  background-image: linear-gradient(107deg, #151515, #242632);
 
   h2 {
     margin: 0.8em 0 0 0;
@@ -77,16 +183,6 @@ body {
       width: 100px;
       height: 100px;
     }
-  }
-}
-
-.padded {
-  max-width: 1200px;
-  padding: 0 2%;
-  margin: 0 auto;
-
-  @include responsive(tablet) {
-    max-width: 1000px;
   }
 }
 
@@ -128,7 +224,6 @@ body {
     display: inline-block;
     width: 420px;
     font-size: 3rem;
-    line-height: 1.2;
 
     @include responsive(landscape) {
       float: none !important;

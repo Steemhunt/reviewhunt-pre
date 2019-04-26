@@ -1,3 +1,7 @@
+$primary: #08f6f6;
+$grey: #8b9699;
+$light_grey: #c6c6c6;
+
 @mixin responsive($media) {
   @if $media == tiny {
     @media only screen and (max-width: 320px) { @content; }

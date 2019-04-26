@@ -3,13 +3,81 @@
   <h3 class="primary-color">REVIEWHUNT</h3>
   <h1>Build Launching Hype<br/>by Millions of Hunters</h1>
   <div class="actions">
-    <button class="btn btn-primary">PRE SIGN-UP<br/>MAKERS</button>
-    <button class="btn">PRE SIGN-UP<br/>HUNTERS</button>
+    <a href="<%= new_maker_path %>" class="btn btn-primary">PRE SIGN-UP<br/>MAKERS</a>
+    <a href="<%= new_hunter_path %>" class="btn">PRE SIGN-UP<br/>HUNTERS</a>
   </div>
+  <% unless flash[:notice].blank? %>
+    <div class="thank-you">
+      <%= image_tag 'tick.svg', class: 'tick' %> <%= flash[:notice] %>
+    </div>
+  <% end %>
   <%= image_tag 'main-img-2.png', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %>
 </div>
 
-<div class="review-reinvented">
+<div class="maker-stats grey-gradient">
+  <div class="padded">
+    <h1 class="sans bigger">
+      <span class="primary-color"><%= number_with_delimiter @stats[:maker_count] %></span> companies pre signed-up to spend <span class="primary-color"><%= number_to_currency(@stats[:total_budget], precision: 0) %></span> on a monthly basis.
+    </h1>
+
+    <div class="split">
+      <div class="first left">
+        <%= image_tag 'x-2-credit-btn.png', srcset: { 'x-2-credit-btn@2x.png' => '2x', 'x-2-credit-btn@3x.png' => '3x' }, class: 'x-2-credit-btn' %>
+      </div>
+      <div class="second right">
+        <h3 class="sans normal">Pre sign-up today to earn this limited offer that will double up your review credit purchase.</h3>
+        <p class="grey">
+          At Reviewhunt, you can spread impactful review content to hundreds of tech channels such as Reddit, Youtube, and Twitter by utilising over 20,000 blockchain-powered product influencers.
+        </p>
+        <a href="<%= new_maker_path %>" class="btn btn-primary">PRE SIGN-UP<br/>MAKERS</a>
+        <p>Current companies that are pre signed-up so far.</p>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name of Company</th>
+            <th>Category</th>
+            <th>Monthly Budget</th>
+          </tr>
+          <% @stats[:last_makers].each do |m| %>
+            <tr>
+              <td><%= m.id %></td>
+              <td><%= hashed_name(m.company_name) %></td>
+              <td><%= m.business_category %></td>
+              <td><%= number_to_currency m.monthly_budget %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div><!-- // .split -->
+  </div><!-- // .padded -->
+</div><!-- // .maker-stats -->
+
+<div class="hunter-stats">
+  <div class="padded">
+    <h1 class="sans bigger">
+      <span class="primary-color">Custom content</span> that penetrates Reddit, Youtube, Twitter, Instagram, Medium, and hundreds more
+    </h1>
+  <div class="split">
+      <div class="first right">
+        <%= image_tag 'm-dashboard.png', srcset: { 'm-dashboard@2x.png' => '2x', 'm-dashboard@3x.png' => '3x' }, class: 'm-dashboard' %>
+      </div>
+      <div class="second left">
+        <h3 class="sans normal">Are you an active community user? Do you run any active social channels? Pre sign-up today and get early-access on Reviewhunt.</h3>
+        <p class="grey">
+          HUNT is home to product early-adopters who have exceptional knowledge and passion for cool new products. Our blockchain-powered token economy enables you to utilise their influential power on their own channels and communities.
+        </p>
+        <a href="<%= new_hunter_path %>" class="btn">PRE SIGN-UP<br/>HUNTERS</a>
+        <p>Our Hunters have Influence over</p>
+        <div class="progress" style="width: 100%"%></div>
+        <div class="grey">Youtube: 17,250 Subscribers</div>
+        <div class="progress" style="width: 72%"%></div>
+        <div class="grey">Reddit: 25,730 Karmas</div>
+      </div>
+    </div><!-- // .split -->
+  </div><!-- // .padded -->
+</div><!-- // .hunter-stats -->
+
+<div class="review-reinvented grey-gradient">
   <%= image_tag 'logo-circle-2.svg', class: 'logo-circle-2' %>
   <h2>Reviews. Reinvented.</h2>
   <h3 class="grey">Coming This Summer</h3>

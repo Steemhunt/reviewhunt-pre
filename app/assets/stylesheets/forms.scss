@@ -1,0 +1,47 @@
+@import "./mixins";
+
+.form {
+  width: 600px;
+  max-width: 96%;
+  font-size: 1.5rem;
+  margin: 5rem auto 0 auto;
+
+  h2 {
+    margin-top: 4rem;
+    font-size: 1.75rem;
+    font-weight: normal;
+  }
+
+  .input-text {
+    box-sizing: border-box;
+    width: 100%;
+    border: solid 1px $grey;
+    background-color: #000;
+    color: #fff;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .error {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+  }
+
+  .btn {
+    margin-top: 5rem;
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+.back-button {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+
+  a {
+    color: $grey;
+    text-decoration: underline;
+  }
+}

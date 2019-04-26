@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_04_25_051538) do
     t.string "company_name", null: false
     t.string "name", null: false
     t.string "position", null: false
+    t.string "business_category", null: false
     t.decimal "monthly_budget", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
