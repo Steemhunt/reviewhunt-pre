@@ -54,6 +54,7 @@
 
     .label {
       width: 12rem;
+      flex-shrink: 0;
     }
     .input-text {
       margin-bottom: 0;
@@ -63,6 +64,7 @@
       width: 2rem;
       height: 2rem;
       cursor: pointer;
+      flex-shrink: 0;
     }
   }
 }

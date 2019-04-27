@@ -34,22 +34,34 @@
 </div>
 
 <script>
-  const choices = new Choices('#hunter_country_code, #add-channels');
+  new Choices('#hunter_country_code');
+  const channelChoice = new Choices('#add-channels');
 
-  const channelTemplate = function(name) {
+  const channelTemplate = function(name, value = '') {
     return `
       <div class="channel">
         <span class="label">${titleize(name)}:</span>
-        <input type="text" class="input-text" placeholder="Input your profile URL" />
+        <input type="hidden" name="hunter[channels_attributes][][channel_name]" value="${name}" />
+        <input type="text" name="hunter[channels_attributes][][url]" value="${value}" class="input-text" placeholder="Input your profile URL" />
         <%= image_tag 'minus.svg', class: 'remove' %>
       </div>
     `;
   }
 
+  const restoreChannels = function(array) {
+    for (c of array) {
+      $('#channels').append(channelTemplate(c.channel_name, c.url));
+    }
+  }
+  <% if params[:hunter] && !params[:hunter][:channels_attributes].blank? %>
+    restoreChannels(<%= params[:hunter][:channels_attributes].to_json.html_safe %>);
+  <% end %>
+
   $('#add-channels').on('change', function(e) {
     if (e.detail.value) {
       $('#channels').append(channelTemplate(e.detail.value));
     }
+    channelChoice.setChoiceByValue('');
   });
 
   $('#channels').on('click', '.remove', function(e) {

@@ -68,10 +68,11 @@
         </p>
         <a href="<%= new_hunter_path %>" class="btn">PRE SIGN-UP<br/>HUNTERS</a>
         <p>Our Hunters have Influence over</p>
-        <div class="progress" style="width: 100%"%></div>
-        <div class="grey">Youtube: 17,250 Subscribers</div>
-        <div class="progress" style="width: 72%"%></div>
-        <div class="grey">Reddit: 25,730 Karmas</div>
+        <% @stats[:channel_count].each do |c| %>
+          <% percent = (100 * c[1] / @stats[:max_count]).to_i %>
+          <div class="progress" style="width: <%= percent < 1 ? 1 : (percent > 100 ? 100 : percent) %>%"%></div>
+          <div class="grey"><%= c[0].titleize %>: <%= number_with_delimiter c[1].to_i %> <%= Channel.follower_name(c[0]) %></div>
+        <% end %>
       </div>
     </div><!-- // .split -->
   </div><!-- // .padded -->

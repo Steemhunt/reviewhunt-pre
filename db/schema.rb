@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2019_04_25_051538) do
   enable_extension "plpgsql"
 
   create_table "channels", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "hunter_id", null: false
     t.string "channel_name", null: false
     t.string "url", null: false
     t.decimal "score", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_channels_on_user_id"
+    t.index ["hunter_id"], name: "index_channels_on_hunter_id"
   end
 
   create_table "hunters", force: :cascade do |t|
