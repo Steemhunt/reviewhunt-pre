@@ -72,8 +72,18 @@ a {
 }
 
 .grey-gradient {
-  background-color: #151515;
+  background-color: #242632;
   background-image: linear-gradient(107deg, #151515, #242632);
+}
+
+.pink-gradient {
+  background-color: #fc6f6f;
+  background-image: linear-gradient(to top, #fa7f92, #fc6f6f);
+}
+
+.mint-gradient {
+  background-color: #08f6f6;
+  background-image: linear-gradient(63deg, #00f198, #08f6f6);
 }
 
 .btn {
@@ -91,6 +101,11 @@ a {
   &.btn-primary {
     background-color: $primary;
     color: #000;
+  }
+
+  &.btn-white {
+    color: #fff;
+    border: 1px solid #fff;
   }
 }
 

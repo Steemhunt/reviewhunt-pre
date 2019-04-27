@@ -1,7 +1,7 @@
 @import "./mixins";
 
 body {
-  background-color: #000;
+  background-color: $black;
   color: #fff;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .padded {
   max-width: 1200px;
-  padding: 0 2%;
+  padding: 0 3%;
   margin: 0 auto;
 
   @include responsive(tablet) {
@@ -80,14 +80,23 @@ body {
   }
 }
 
-.maker-stats, .hunter-stats {
+.maker-stats, .hunter-stats, .token-demands {
   margin-top: 9.375rem;
   padding-top: 9.375rem;
   padding-bottom: 9.375rem;
 
+  @include responsive(mobile) {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
   h1 {
-    max-width: 800px;
+    max-width: 880px;
     margin: 0;
+
+    @include responsive(mobile) {
+      font-size: 4rem;
+    }
   }
 
   .split {
@@ -96,6 +105,11 @@ body {
 
     .left, .right {
       width: 50%;
+
+      @include responsive(mobile) {
+        width: 100%;
+        float: none;
+      }
     }
 
     .left {
@@ -106,13 +120,29 @@ body {
       float: right;
     }
 
-    .x-2-credit-btn, .m-dashboard {
-      width: 70%;
-      height: auto;
-    }
+    .first {
+      @include responsive(mobile) {
+        text-align: center;
+      }
 
-    .m-dashboard {
-      float: right;
+      img {
+        width: 70%;
+        height: auto;
+      }
+
+      .m-dashboard, .sync-exchange-img {
+        float: right;
+
+        @include responsive(mobile) {
+          float: none;
+        }
+      }
+
+      .sync-exchange-img {
+        @include responsive(mobile) {
+          margin-bottom: 3rem;
+        }
+      }
     }
 
     .second {
@@ -158,6 +188,54 @@ body {
     margin: 1rem 0 0.3125rem 0;
     background-color: $primary;
     background-image: linear-gradient(89deg, #00f198, #08f6f6);
+  }
+} // .hunter-stats
+
+.token-demands {
+  p {
+    margin-top: 0;
+  }
+}
+
+.steemhunt {
+  display: flex;
+  @include responsive(mobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-image: asset-url('sh-showcase.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include responsive(mobile) {
+      width: 100%;
+      height: 360px;
+      margin: 0;
+    }
+  }
+
+  .right {
+    padding: 8.75rem 0;
+    width: 40%;
+
+    @include responsive(mobile) {
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+    }
   }
 }
 
@@ -259,4 +337,50 @@ body {
       width: 100%;
     }
   }
-}
+} // .intro
+
+.footer {
+  padding: 7.5rem 0;
+  text-align: center;
+  color: $black;
+
+  .logo-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  h3 {
+    margin-top: 1.25rem;
+  }
+
+  h2 {
+    margin-top: 3.125rem;
+  }
+
+  .btn {
+    color: $black;
+    border-color: $black;
+    margin: 0 0.5625rem;
+
+    &.btn-primary {
+      color: #fff;
+      background-color: $black;
+    }
+  }
+
+  .links {
+    width: 280px;
+    margin: 4rem auto 0 auto;
+    text-align: center;
+    font-size: 1.375rem;
+
+    p {
+      margin: 0.8rem 0;
+      a {
+        color: $black;
+      }
+    }
+  }
+
+} // .footer
+

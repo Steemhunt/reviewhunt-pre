@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-  include ApplicationHelper
-
   def index
     @stats = {
       maker_count: Maker.count,
