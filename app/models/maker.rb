@@ -1,5 +1,6 @@
 class Maker < ApplicationRecord
   BUSINESS_CATEGORIES = [
+    'Advertising',
     'Social',
     'Games',
     'Commerce',
