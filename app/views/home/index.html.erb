@@ -11,7 +11,10 @@
       <%= image_tag 'tick.svg', class: 'tick' %> <%= flash[:notice] %>
     </div>
   <% end %>
-  <%= image_tag 'main-img-2.png', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %>
+  <div class="siema">
+    <div><%= image_tag 'main-img-1.png', srcset: { 'main-img-1@2x.png' => '2x', 'main-img-1@3x.png' => '3x' }, class: 'main-img' %></div>
+    <div><%= image_tag 'main-img-2.png', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %></div>
+  </div>
 </div>
 
 <div class="maker-stats grey-gradient">
@@ -157,3 +160,17 @@
     <p><a href="https://steemhunt.com" target="_blank">Check out Steemhunt! 😍</a></p>
   </div>
 </div>
+
+<script>
+  const carousel = new Siema({
+    selector: '.siema',
+    duration: 300,
+    easing: 'ease-out',
+    draggable: false,
+    loop: true,
+  });
+
+  const carouselInterval = setInterval(function() {
+    carousel.next();
+  }, 3000);
+</script>
