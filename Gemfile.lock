@@ -51,7 +51,7 @@ GEM
       eventmachine
       ffi
       scrypt
-    bootsnap (1.4.3)
+    bootsnap (1.4.4)
       msgpack (~> 1.0)
     bugsnag (6.11.1)
       concurrent-ruby (~> 1.0)
