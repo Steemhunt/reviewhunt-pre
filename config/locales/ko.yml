@@ -1,56 +1,56 @@
 ko:
   main:
     tagline: 수백만 헌터들이 직접 만드는 신제품 버즈
-    signup_maker: PRE SIGN-UP<br/>MAKERS
-    signup_hunter: PRE SIGN-UP<br/>HUNTERS
+    signup_maker: 메이커 (기업)<br/>사전가입
+    signup_hunter: 헌터 (인플루언서)<br/>사전가입
   stats_maker:
-    heading: <span class="primary-color">%{maker_count}</span> companies pre signed-up to spend <span class="primary-color">%{total_budget}</span> on a monthly basis.
-    heading2: Pre sign-up today to earn this limited offer that will double up your review credit purchase.
-    text: At Reviewhunt, you can spread impactful review content to hundreds of tech channels such as Reddit, Youtube, and Twitter by utilising over 20,000 blockchain-powered product influencers.
-    table_title: Current companies that are pre signed-up so far.
-    th_company: Name of Company
-    category: Category
-    monthly_budget: Monthly Budget
+    heading: 매달 총 마케팅 예산 <span class="primary-color">%{total_budget}</span> 규모의 <span class="primary-color">%{maker_count}</span>개의 회사가 리뷰헌트에 사전 가입했습니다.
+    heading2: 사전 가입한 기업들에게 충전하는 리뷰 크레딧 금액이 2배가 되는 쿠폰을 지급해 드립니다 (한정수량, 선착순).
+    text: 리뷰헌트에서는 블록체인 기반 커뮤니티에서 활동하는 2만명 이상의 인플루언서들이, 각자 활동하는 레딧, 유튜브, 트위터 등 수백개의 채널에 가장 효과적이고 자연스러운 리뷰 컨텐츠를 만들어 전파합니다.
+    table_title: 지금까지 사전가입 한 기업 리스트.
+    th_company: 회사 이름
+    category: 카테고리
+    monthly_budget: 한달 마케팅 예산
   stats_hunter:
-    heading: <span class="primary-color">Custom content</span> that penetrates Reddit, Youtube, Twitter, Instagram, Medium, and hundreds more
-    heading2: Are you an active community user? Do you run any active social channels? Pre sign-up today and get early-access on Reviewhunt.
-    text: HUNT is home to product early-adopters who have exceptional knowledge and passion for cool new products. Our blockchain-powered token economy enables you to utilise their influential power on their own channels and communities.
-    graph_title: Our Hunters have Influence over
+    heading: 레딧, 유튜브, 트위터, 인스타그램, 미디엄, 그리고 <span class="primary-color">수백개 이상</span>의 채널로 전파되는 헌터들의 제품 리뷰 컨텐츠
+    heading2: 활발히 활동중인 커뮤니티나 소셜 채널이 있나요? 지금 바로 헌터 사전 가입을 완료하고 리뷰헌트 제품 출시 소식을 가장 먼저 받아보세요.
+    text: 신제품에 대한 높은 지식과 열정을 가진 얼리어답터들은 전 세계의 많은 커뮤니티에서 활발하게 활동하는 전파력 높은 유저들입니다. 기업들은 블록체인을 기반으로 한 헌트 토큰 경제를 통해 그들의 전파력을 손 쉽게 활용하여 리뷰 캠페인을 전개할 수 있습니다.
+    graph_title: 현재까지 사전가입한 헌터들의 각 채널 파급력
   steemhunt:
-    title: Over 20k Hunters join from Steemhunt, the biggest tech community in blockchain
+    title: 블록체인 기반 최대규모의 테크 커뮤니티인 스팀헌트에서 활동하는 2만명 이상의 헌터들이 인플루언서로 활동합니다.
     learn_more: LEARN MORE
   reinvented:
-    title: Reviews. Reinvented.
-    date: Launch in July, 2019
+    title: 리뷰 캠페인의 새로운 정의
+    date: 2019년 7월 출시
   intro:
-    title_1: Stop promoting yourself.
-    text_1: Make hunters talk about your product over all accessible channels.
-    title_2: Run privately, not publically.
-    text_2: Your review offers get delivered only to the hunters that meet your standards.
-    title_3: No abuse worries.
-    text_3: Community-based moderation system will protect you from abusers and low quality review content.
-    title_4: Make a special request.
-    text_4: Browse top hunters by performance, channel, and various other conditions.
+    title_1: 스스로 찍어내는 리뷰 컨텐츠는 이제 그만.
+    text_1: 헌터들이 저마다의 방식으로 가능한 모든 채널에서 당신 제품에 대해 이야기합니다.
+    title_2: 비공개 방식으로 진행되는 리뷰 제안.
+    text_2: 직접 설정한 기준에 적합한 헌터들에게만 리뷰 제안이 전달됩니다.
+    title_3: 어뷰저에 대한 걱정 끝.
+    text_3: 커뮤니티에서 선발된 모더레이터들이 어뷰저 및 기준 미달 리뷰 컨텐츠를 차단합니다.
+    title_4: 특별한 헌터에게는 스페셜 리뷰 제안.
+    text_4: 과거 리뷰 성과, 리뷰 채널 등 다양한 조건으로 최고의 헌터들을 직접 검색, 리뷰 제안을 전달할 수 있습니다.
   real_demands:
-    title: <span class="primary-color">Real token demands</span> come from companies marketing budget
-    text: Reviewhunt is a one of a kind DApp that connects real product demands to token buying demands. Companies purchase review credit to utilise the influential power of strong hunters, and this demand will directly connect to the buying order via our partner exchanges. This will create a highly stable and nurturing token economy among all counterparts.
+    title: 기업의 마케팅 예산에 연결되는 <span class="primary-color">진짜 토큰 수요</span>
+    text: 리뷰헌트는 블록체인 기반 디앱 (DApp)들 중 몇 안되는 실제 토큰 수요가 창출되는 플랫폼 입니다. 기업에서 리뷰 캠페인 진행을 위해 크레딧을 충전하면, 이 주문이 바로 리뷰헌트의 파트너 거래소에서 토큰 구매로 연결됩니다. 이를 통해 소위 pump and dump가 아닌 안정적인 실 수요를 기반으로 한 건강한 토큰 경제를 구축할 수 있습니다.
   footer:
-    what_is: What is HUNT Platform? 🤔
-    check_out: Check out Steemhunt! 😍
+    what_is: 헌트 플랫폼이란? 🤔
+    check_out: 스팀헌트에 대해 알아보기 😍
 
   form:
-    heading: 제너럴 인포
-    full_name: Full Name
-    email: Email
-    choose_country: "- Choose Country of Regidence -"
-    heading2: What social channels or communities are you involved with?
-    add_channels: "- Add Channels -"
-    input_url: Input your profile URL
-    submit: SUBMIT
-    back: BACK TO HOME
-    company_name: Name of Company
-    position: Position at you Company
-    heading3: What category does your company/business belong to?
-    choose_category: "- Choose Category -"
-    heading4: How much is your monthly marketing budget?
-    monthly_budget: Monthly budget in USD terms
+    heading: 기본 정보
+    full_name: 성함
+    email: 이메일 주소
+    choose_country: "- 거주 국가 -"
+    heading2: 당신이 활동중인 소셜 채널 및 커뮤니티를 모두 선택해 주세요 (채널 추가 버튼을 눌러서 계속 추가하실 수 있습니다).
+    add_channels: "- 채널 추가 -"
+    input_url: 프로필 주소를 입력하세요
+    submit: 제출
+    back: 뒤로가기
+    company_name: 회사 이름
+    position: 회사에서의 직함 (담당 포지션)
+    heading3: 당신의 회사/비즈니스가 다음 중 어떤 영역에 속하나요?
+    choose_category: "- 카테고리 추가 -"
+    heading4: 한달 마케팅 예산이 얼마나 되나요?
+    monthly_budget: 미국 달러 환산 금액으로 입력하세요
