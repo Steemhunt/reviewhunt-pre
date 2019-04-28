@@ -8,6 +8,7 @@ class Channel < ApplicationRecord
   validates_presence_of :channel_name, :url
   validates :channel_name, inclusion: { in: SUPPORTED_CHANNELS }
   validate :url_format
+  validates_uniqueness_of :url
 
   def url_format
     return if channel_name == 'others'
