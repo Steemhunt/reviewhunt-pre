@@ -8,7 +8,7 @@ class Channel < ApplicationRecord
   validates_presence_of :channel_name, :url
   validates :channel_name, inclusion: { in: SUPPORTED_CHANNELS }
   validate :url_format
-  validates :username, uniqueness: { scope: :channel_name, message: '"%{value}" has already been subscribed' }, allow_nil: true
+  validates :username, uniqueness: { scope: :channel_name, message: '"%{value}" has already been subscribed' }, allow_blank: true
 
   def url_format
     unless url =~ /\A#{URI::regexp(['http', 'https'])}\z/
