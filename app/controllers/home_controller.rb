@@ -1,9 +1,5 @@
 class HomeController < ApplicationController
   def index
-    locale = params[:locale] ? params[:locale] : cookies[:locale] ? cookies[:locale] : 'en'
-    I18n.locale = I18n.available_locales.map(&:to_s).include?(locale) ? locale : 'en'
-    cookies[:locale] = I18n.locale
-
     @stats = {
       maker_count: Maker.count,
       total_budget: Maker.sum(:monthly_budget),

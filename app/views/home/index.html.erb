@@ -8,8 +8,8 @@
   <h3 class="primary-color">REVIEWHUNT</h3>
   <h1><%= t('main.tagline') %></h1>
   <div class="actions">
-    <a href="<%= new_maker_path %>" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
-    <a href="<%= new_hunter_path %>" class="btn"><%= t('main.signup_hunter').html_safe %></a>
+    <a href="<%= I18n.locale %>/makers/new" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+    <a href="<%= I18n.locale %>/hunters/new" class="btn"><%= t('main.signup_hunter').html_safe %></a>
   </div>
   <% unless flash[:notice].blank? %>
     <div class="thank-you">
@@ -40,7 +40,7 @@
         <p class="grey">
           <%= t('stats_maker.text') %>
         </p>
-        <a href="<%= new_maker_path %>" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+        <a href="<%= I18n.locale %>/makers/new" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
         <p><%= t('stats_maker.table_title') %></p>
         <table>
           <tr>
@@ -77,7 +77,7 @@
         <p class="grey">
           <%= t('stats_hunter.text') %>
         </p>
-        <a href="<%= new_hunter_path %>" class="btn"><%= t('main.signup_hunter').html_safe %></a>
+        <a href="<%= I18n.locale %>/hunters/new" class="btn"><%= t('main.signup_hunter').html_safe %></a>
         <p><%= t('stats_hunter.graph_title') %></p>
         <% @stats[:channel_count].each do |c| %>
           <% percent = (100 * c[1] / @stats[:max_count]).to_i %>
@@ -159,8 +159,8 @@
   <h3>REVIEWHUNT</h3>
   <h2><%= t('reinvented.date') %></h2>
   <div class="actions">
-    <a href="<%= new_maker_path %>" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
-    <a href="<%= new_hunter_path %>" class="btn"><%= t('main.signup_hunter').html_safe %></a>
+    <a href="<%= I18n.locale %>/makers/new" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+    <a href="<%= I18n.locale %>/hunters/new" class="btn"><%= t('main.signup_hunter').html_safe %></a>
   </div>
   <div class="links">
     <p><a href="https://token.steemhunt.com" target="_blank"><%= t('footer.what_is') %></a></p>

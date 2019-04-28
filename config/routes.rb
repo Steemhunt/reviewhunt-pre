@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
-
   resources :makers, only: [:new, :create]
   resources :hunters, only: [:new, :create]
+
+  scope "/:locale" do
+    root 'home#index'
+
+    resources :makers, only: [:new, :create]
+    resources :hunters, only: [:new, :create]
+  end
 
   namespace :admin do
     resources :channels
@@ -11,6 +17,4 @@ Rails.application.routes.draw do
 
     root to: "hunters#index"
   end
-
-  get '/:locale', to: 'home#index'
 end
