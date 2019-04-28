@@ -6,7 +6,7 @@ module Influence
     escaped = format.gsub('/', '\/').
       gsub('www.', '(www.)?').
       gsub('.', '\.').
-      gsub('{username}', '(?<username>[A-Za-z0-9\.-_]+)')
+      gsub('{username}', '(?<username>[A-Za-z0-9_\-\.]+)')
     /#{escaped}/
   end
 

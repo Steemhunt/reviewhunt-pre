@@ -8,22 +8,26 @@ class Channel < ApplicationRecord
   validates_presence_of :channel_name, :url
   validates :channel_name, inclusion: { in: SUPPORTED_CHANNELS }
   validate :url_format
-  validates_uniqueness_of :url
+  validates :username, uniqueness: { scope: :channel_name, message: '"%{value}" has already been subscribed' }, allow_nil: true
 
   def url_format
+    unless url =~ /\A#{URI::regexp(['http', 'https'])}\z/
+      errors.add(:url, "- \"#{url}\" is invalid URL format.")
+    end
+
     return if channel_name == 'others'
 
     klass = Influence.const_get(channel_name.capitalize)
-    username = klass.parse(url)
+    self.username = klass.parse(url)
 
-    errors.add(:url, " - Please type a valid profile URL. It should be #{klass::FORMAT} format.") unless username
+    errors.add(:url, "- \"#{url}\" - Please type a valid profile URL. It should be #{klass::FORMAT} format.") unless self.username
 
     begin
-      self.score = klass.score(username)
+      self.score = klass.score(self.username)
     rescue => e
       Rails.logger.error "Failed get username on #{channel_name.capitalize}: #{e}"
 
-      errors.add(:url, "cannot be found") unless username
+      errors.add(:url, "- \"#{url}\" - cannot be found") unless self.username
     end
   end
 

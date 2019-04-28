@@ -12,6 +12,7 @@ class ChannelDashboard < Administrate::BaseDashboard
     id: Field::Number,
     channel_name: Field::String,
     url: Field::String,
+    username: Field::String,
     score: Field::Number,
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
     updated_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z')
@@ -27,6 +28,7 @@ class ChannelDashboard < Administrate::BaseDashboard
     :id,
     :channel_name,
     :url,
+    :username,
     :score
   ].freeze
 
@@ -37,6 +39,7 @@ class ChannelDashboard < Administrate::BaseDashboard
     :id,
     :channel_name,
     :url,
+    :username,
     :score,
     :created_at,
     :updated_at,
@@ -49,6 +52,7 @@ class ChannelDashboard < Administrate::BaseDashboard
     :hunter,
     :channel_name,
     :url,
+    :username,
     :score,
   ].freeze
 
