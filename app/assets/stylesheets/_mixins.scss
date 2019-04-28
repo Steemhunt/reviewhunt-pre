@@ -10,8 +10,8 @@ $light_grey: #c6c6c6;
   @else if $media == mobile {
     @media only screen and (max-width: 480px) { @content; }
   }
-  @else if $media == landscape {
-    @media only screen and (max-width: 1024px) { @content; }
+  @else if $media == vertical {
+    @media only screen and (max-width: 1023px) { @content; }
   }
   @else if $media == tablet { // wide mode
     @media only screen and (max-width: 1200px) { @content; }
