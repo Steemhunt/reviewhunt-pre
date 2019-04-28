@@ -15,7 +15,7 @@ class Channel < ApplicationRecord
     klass = Influence.const_get(channel_name.capitalize)
     username = klass.parse(url)
 
-    errors.add(:url, "should be in #{klass::FORMAT} format.") unless username
+    errors.add(:url, " - Please type a valid profile URL. It should be #{klass::FORMAT} format.") unless username
 
     begin
       self.score = klass.score(username)

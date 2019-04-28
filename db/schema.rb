@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_25_051538) do
+ActiveRecord::Schema.define(version: 2019_04_28_082410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_04_25_051538) do
     t.decimal "score", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["channel_name"], name: "index_channels_on_channel_name"
     t.index ["hunter_id"], name: "index_channels_on_hunter_id"
   end
 
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_04_25_051538) do
     t.string "country_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_hunters_on_email", unique: true
   end
 
   create_table "makers", force: :cascade do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_04_25_051538) do
     t.decimal "monthly_budget", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_makers_on_email", unique: true
   end
 
 end
