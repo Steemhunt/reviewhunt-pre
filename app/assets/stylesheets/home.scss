@@ -31,7 +31,8 @@ body {
   }
 
   h1 {
-    margin: 1em 0;
+    max-width: 800px;
+    margin: 1em auto;
 
     &.less-margin {
       margin: 0.3em 0;
