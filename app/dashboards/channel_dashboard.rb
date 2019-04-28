@@ -12,7 +12,7 @@ class ChannelDashboard < Administrate::BaseDashboard
     id: Field::Number,
     channel_name: Field::String,
     url: Field::String,
-    score: Field::String.with_options(searchable: false),
+    score: Field::Number,
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
     updated_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z')
   }.freeze

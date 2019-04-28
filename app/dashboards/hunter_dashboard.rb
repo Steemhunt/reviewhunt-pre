@@ -9,12 +9,11 @@ class HunterDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
+    email: Field::Email,
     name: Field::String,
     country_code: Field::String,
     country_name: Field::String,
     channels: Field::HasMany,
-    channel_summary: Field::String,
     total_score: Field::Number,
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
     updated_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z')
@@ -30,7 +29,7 @@ class HunterDashboard < Administrate::BaseDashboard
     :email,
     :name,
     :country_name,
-    :channel_summary,
+    :channels,
     :total_score,
     :created_at
   ].freeze

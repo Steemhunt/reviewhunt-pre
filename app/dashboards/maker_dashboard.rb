@@ -9,7 +9,7 @@ class MakerDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
+    email: Field::Email,
     company_name: Field::String,
     name: Field::String,
     position: Field::String,
