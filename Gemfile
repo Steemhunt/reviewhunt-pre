@@ -15,6 +15,7 @@ gem 'bugsnag'
 gem 'faraday'
 gem 'steem-ruby'
 gem 'country_select'
+gem 'administrate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
