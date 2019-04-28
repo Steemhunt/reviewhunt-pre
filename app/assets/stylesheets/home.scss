@@ -9,6 +9,17 @@ body {
   margin-top: 100px;
   text-align: center;
 
+  .language {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    display: inline-block;
+    border: 2px solid $primary;
+    border-radius: 5px;
+    color: $primary;
+    padding: 2px 15px;
+  }
+
   .logo-circle {
     margin-top: -135px;
     width: 380px;
@@ -35,7 +46,7 @@ body {
     margin: 1em auto;
 
     &.less-margin {
-      margin: 0.3em 0;
+      margin: 0.3em auto;
     }
 
     @include responsive(mobile) {

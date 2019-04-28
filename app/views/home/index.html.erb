@@ -1,10 +1,15 @@
 <div class="main">
+  <!--
+  <a href="<%= I18n.locale == :en ? '/ko' : '/' %>" class="language">
+    <%= I18n.locale == :en ? 'Korean' : 'English' %>
+  </a>
+  -->
   <%= image_tag 'logo-circle.svg', class: 'logo-circle' %>
   <h3 class="primary-color">REVIEWHUNT</h3>
-  <h1>Build Launching Hype by Millions of Hunters</h1>
+  <h1><%= t('main.tagline') %></h1>
   <div class="actions">
-    <a href="<%= new_maker_path %>" class="btn btn-primary">PRE SIGN-UP<br/>MAKERS</a>
-    <a href="<%= new_hunter_path %>" class="btn">PRE SIGN-UP<br/>HUNTERS</a>
+    <a href="<%= new_maker_path %>" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+    <a href="<%= new_hunter_path %>" class="btn"><%= t('main.signup_hunter').html_safe %></a>
   </div>
   <% unless flash[:notice].blank? %>
     <div class="thank-you">
@@ -12,34 +17,37 @@
     </div>
   <% end %>
   <div class="siema">
-    <div><%= image_tag 'main-img-1.png', srcset: { 'main-img-1@2x.png' => '2x', 'main-img-1@3x.png' => '3x' }, class: 'main-img' %></div>
-    <div><%= image_tag 'main-img-2.png', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %></div>
+    <div><%= image_tag 'main-img-1.png', alt: 'Demo Image 1', srcset: { 'main-img-1@2x.png' => '2x', 'main-img-1@3x.png' => '3x' }, class: 'main-img' %></div>
+    <div><%= image_tag 'main-img-2.png', alt: 'Demo Image 2', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %></div>
   </div>
 </div>
 
 <div class="maker-stats grey-gradient">
   <div class="padded">
     <h1 class="sans bigger">
-      <span class="primary-color"><%= number_with_delimiter @stats[:maker_count] %></span> companies pre signed-up to spend <span class="primary-color"><%= number_to_currency(@stats[:total_budget], precision: 0) %></span> on a monthly basis.
+      <%= t('stats_maker.heading',
+          maker_count: number_with_delimiter(@stats[:maker_count]),
+          total_budget: number_to_currency(@stats[:total_budget], precision: 0),
+        ).html_safe %>
     </h1>
 
     <div class="split">
       <div class="first left">
-        <%= image_tag 'x-2-credit-btn.png', srcset: { 'x-2-credit-btn@2x.png' => '2x', 'x-2-credit-btn@3x.png' => '3x' }, class: 'x-2-credit-btn' %>
+        <%= image_tag 'x-2-credit-btn.png', alt: 'Pre Sign-up Get x2 Credit', srcset: { 'x-2-credit-btn@2x.png' => '2x', 'x-2-credit-btn@3x.png' => '3x' }, class: 'x-2-credit-btn' %>
       </div>
       <div class="second right">
-        <h3 class="sans normal">Pre sign-up today to earn this limited offer that will double up your review credit purchase.</h3>
+        <h3 class="sans normal"><%= t('stats_maker.heading2') %></h3>
         <p class="grey">
-          At Reviewhunt, you can spread impactful review content to hundreds of tech channels such as Reddit, Youtube, and Twitter by utilising over 20,000 blockchain-powered product influencers.
+          <%= t('stats_maker.text') %>
         </p>
-        <a href="<%= new_maker_path %>" class="btn btn-primary">PRE SIGN-UP<br/>MAKERS</a>
-        <p>Current companies that are pre signed-up so far.</p>
+        <a href="<%= new_maker_path %>" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+        <p><%= t('stats_maker.table_title') %></p>
         <table>
           <tr>
             <th>ID</th>
-            <th>Name of Company</th>
-            <th>Category</th>
-            <th>Monthly Budget</th>
+            <th><%= t('stats_maker.th_company') %></th>
+            <th><%= t('stats_maker.category') %></th>
+            <th><%= t('stats_maker.monthly_budget') %></th>
           </tr>
           <% @stats[:last_makers].each do |m| %>
             <tr>
@@ -58,19 +66,19 @@
 <div class="hunter-stats">
   <div class="padded">
     <h1 class="sans bigger">
-      <span class="primary-color">Custom content</span> that penetrates Reddit, Youtube, Twitter, Instagram, Medium, and hundreds more
+      <%= t('stats_hunter.heading').html_safe %>
     </h1>
   <div class="split">
       <div class="first right">
         <%= image_tag 'm-dashboard.png', srcset: { 'm-dashboard@2x.png' => '2x', 'm-dashboard@3x.png' => '3x' }, class: 'm-dashboard' %>
       </div>
       <div class="second left">
-        <h3 class="sans normal">Are you an active community user? Do you run any active social channels? Pre sign-up today and get early-access on Reviewhunt.</h3>
+        <h3 class="sans normal"><%= t('stats_hunter.heading2') %></h3>
         <p class="grey">
-          HUNT is home to product early-adopters who have exceptional knowledge and passion for cool new products. Our blockchain-powered token economy enables you to utilise their influential power on their own channels and communities.
+          <%= t('stats_hunter.text') %>
         </p>
-        <a href="<%= new_hunter_path %>" class="btn">PRE SIGN-UP<br/>HUNTERS</a>
-        <p>Our Hunters have Influence over</p>
+        <a href="<%= new_hunter_path %>" class="btn"><%= t('main.signup_hunter').html_safe %></a>
+        <p><%= t('stats_hunter.graph_title') %></p>
         <% @stats[:channel_count].each do |c| %>
           <% percent = (100 * c[1] / @stats[:max_count]).to_i %>
           <div class="progress" style="width: <%= percent < 1 ? 1 : (percent > 100 ? 100 : percent) %>%"%></div>
@@ -84,21 +92,21 @@
 <div class="steemhunt pink-gradient">
   <div class="left"></div>
   <div class="right">
-    <h2>Over 20k Hunters join from Steemhunt, the biggest tech community in blockchain</h2>
-    <a href="https://steemhunt.com" target="_blank" class="btn btn-white">LEARN MORE</a>
+    <h2><%= t('steemhunt.title') %></h2>
+    <a href="https://steemhunt.com" target="_blank" class="btn btn-white"><%= t('steemhunt.learn_more') %></a>
   </div>
 </div>
 
 <div class="review-reinvented grey-gradient">
   <%= image_tag 'logo-circle-2.svg', class: 'logo-circle-2' %>
-  <h2>Reviews. Reinvented.</h2>
-  <h3 class="grey sans normal">Launch in July, 2019</h3>
+  <h2><%= t('reinvented.title') %></h2>
+  <h3 class="grey sans normal"><%= t('reinvented.date') %></h3>
 </div>
 
 <div class="intro padded left">
   <div class="text-box">
-    <div class="primary-color">Stop promoting yourself.</div>
-    <div>Make hunters talk about your product over all accessible channels.</div>
+    <div class="primary-color"><%= t('intro.title_1') %></div>
+    <div><%= t('intro.text_1') %></div>
   </div>
 
   <%= image_tag 'feature-1.png', srcset: { 'feature-1@2x.png' => '2x', 'feature-1@3x.png' => '3x' }, class: 'feature-image' %>
@@ -106,25 +114,24 @@
 
 <div class="intro padded right">
   <div class="text-box">
-    <div class="primary-color">Run privately, not publically.</div>
-    <div>Your review offers get delivered only to the hunters that meet your standards.</div>
+    <div class="primary-color"><%= t('intro.title_2') %></div>
+    <div><%= t('intro.text_2') %></div>
   </div>
   <%= image_tag 'feature-2.png', srcset: { 'feature-2@2x.png' => '2x', 'feature-2@3x.png' => '3x' }, class: 'feature-image' %>
 </div>
 
 <div class="intro padded left">
   <div class="text-box">
-    <div class="primary-color">No abuse worries.</div>
-    <div>Community-based moderation system will protect you from abusers and low quality review content.
-</div>
+    <div class="primary-color"><%= t('intro.title_3') %></div>
+    <div><%= t('intro.text_3') %></div>
   </div>
   <%= image_tag 'feature-3.png', srcset: { 'feature-3@2x.png' => '2x', 'feature-3@3x.png' => '3x' }, class: 'feature-image' %>
 </div>
 
 <div class="intro padded right">
   <div class="text-box">
-    <div class="primary-color">Make a special request.</div>
-    <div>Browse top hunters by performance, channel, and various other conditions.</div>
+    <div class="primary-color"><%= t('intro.title_4') %></div>
+    <div><%= t('intro.text_4') %></div>
   </div>
   <%= image_tag 'feature-4.png', srcset: { 'feature-4@2x.png' => '2x', 'feature-4@3x.png' => '3x' }, class: 'feature-image' %>
 </div>
@@ -132,7 +139,7 @@
 <div class="token-demands grey-gradient">
   <div class="padded">
     <h1 class="sans bigger">
-      <span class="primary-color">Real token demands</span> come from companies marketing budget
+      <%= t('real_demands.title').html_safe %>
     </h1>
   <div class="split">
       <div class="first right">
@@ -140,7 +147,7 @@
       </div>
       <div class="second left">
         <p class="grey">
-          Reviewhunt is a one of a kind DApp that connects real product demands to token buying demands. Companies purchase review credit to utilise the influential power of strong hunters, and this demand will directly connect to the buying order via our partner exchanges. This will create a highly stable and nurturing token economy among all counterparts.
+          <%= t('real_demands.text') %>
         </p>
       </div>
     </div><!-- // .split -->
@@ -150,14 +157,14 @@
 <div class="footer mint-gradient">
   <%= image_tag 'logo-circle-clean.svg', class: 'logo-circle' %>
   <h3>REVIEWHUNT</h3>
-  <h2>Launch in July, 2019</h2>
+  <h2><%= t('reinvented.date') %></h2>
   <div class="actions">
-    <a href="<%= new_maker_path %>" class="btn btn-primary">PRE SIGN-UP<br/>MAKERS</a>
-    <a href="<%= new_hunter_path %>" class="btn">PRE SIGN-UP<br/>HUNTERS</a>
+    <a href="<%= new_maker_path %>" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+    <a href="<%= new_hunter_path %>" class="btn"><%= t('main.signup_hunter').html_safe %></a>
   </div>
   <div class="links">
-    <p><a href="https://token.steemhunt.com" target="_blank">What is HUNT Platform? 🤔</a></p>
-    <p><a href="https://steemhunt.com" target="_blank">Check out Steemhunt! 😍</a></p>
+    <p><a href="https://token.steemhunt.com" target="_blank"><%= t('footer.what_is') %></a></p>
+    <p><a href="https://steemhunt.com" target="_blank"><%= t('footer.check_out') %></a></p>
   </div>
 </div>
 
