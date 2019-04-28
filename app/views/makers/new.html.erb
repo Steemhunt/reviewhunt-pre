@@ -5,17 +5,17 @@
 </div>
 
 <%= form_for @maker, html: { class: 'form' } do |f| %>
-  <h2 class="sans">General Information</h2>
-  <%= f.text_field :company_name, placeholder: 'Name of Company', class: 'input-text' %>
-  <%= f.text_field :name, placeholder: 'Full Name', class: 'input-text' %>
-  <%= f.email_field :email, placeholder: 'Email', class: 'input-text' %>
-  <%= f.text_field :position, placeholder: 'Position at you Company', class: 'input-text' %>
+  <h2 class="sans"><%= t('form.heading') %></h2>
+  <%= f.text_field :company_name, placeholder: t('form.company_name'), class: 'input-text' %>
+  <%= f.text_field :name, placeholder: t('form.full_name'), class: 'input-text' %>
+  <%= f.email_field :email, placeholder: t('form.email'), class: 'input-text' %>
+  <%= f.text_field :position, placeholder: t('form.position'), class: 'input-text' %>
 
-  <h2 class="sans">What category does your company/business belong to?</h2>
-  <%= f.select :business_category, Maker::BUSINESS_CATEGORIES, prompt: '- Choose Category -' %>
+  <h2 class="sans"><%= t('form.heading3') %> </h2>
+  <%= f.select :business_category, Maker::BUSINESS_CATEGORIES, prompt: t('form.choose_category') %>
 
-  <h2 class="sans">How much is your monthly marketing budget?</h2>
-  <%= f.number_field :monthly_budget, placeholder: 'Monthly budget in USD terms', class: 'input-text' %>
+  <h2 class="sans"><%= t('form.heading4') %></h2>
+  <%= f.number_field :monthly_budget, placeholder: t('form.monthly_budget'), class: 'input-text' %>
 
   <% if @maker.errors.any? %>
     <div class="error">
@@ -23,11 +23,11 @@
     </div>
   <% end %>
 
-  <input type="submit" value="SUBMIT" class="btn btn-primary"/>
+  <input type="submit" value="<%= t('form.submit') %>" class="btn btn-primary"/>
 <% end %>
 
 <div class="back-button">
-  <a href="/">BACK TO HOME</a>
+  <a href="/"><%= t('form.back') %></a>
 </div>
 
 <script>

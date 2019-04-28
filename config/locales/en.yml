@@ -37,3 +37,21 @@ en:
   footer:
     what_is: What is HUNT Platform? 🤔
     check_out: Check out Steemhunt! 😍
+
+  form:
+    heading: General Information
+    full_name: Full Name
+    email: Email
+    choose_country: "- Choose Country of Regidence -"
+    heading2: What social channels or communities are you involved with?
+    add_channels: "- Add Channels -"
+    input_url: Input your profile URL
+    submit: SUBMIT
+    back: BACK TO HOME
+    company_name: Name of Company
+    position: Position at you Company
+    heading3: What category does your company/business belong to?
+    choose_category: "- Choose Category -"
+    heading4: How much is your monthly marketing budget?
+    monthly_budget: Monthly budget in USD terms
+

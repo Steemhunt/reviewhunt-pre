@@ -5,14 +5,14 @@
 </div>
 
 <%= form_for @hunter, html: { class: 'form hunter-form' } do |f| %>
-  <h2 class="sans">General Information</h2>
-  <%= f.text_field :name, placeholder: 'Full Name', class: 'input-text' %>
-  <%= f.email_field :email, placeholder: 'Email', class: 'input-text' %>
-  <%= f.country_select :country_code, prompt: '- Choose Country of Regidence -' %>
+  <h2 class="sans"><%= t('form.heading') %></h2>
+  <%= f.text_field :name, placeholder: t('form.full_name'), class: 'input-text' %>
+  <%= f.email_field :email, placeholder: t('form.email'), class: 'input-text' %>
+  <%= f.country_select :country_code, prompt: t('form.choose_country') %>
 
-  <h2>What social channels or communities are you involved with?</h2>
+  <h2><%= t('form.heading2') %></h2>
   <select id="add-channels">
-    <option value="">- Add Channels -</option>
+    <option value=""><%= t('form.add_channels') %></option>
     <% Channel::SUPPORTED_CHANNELS.each do |c| %>
       <option value="<%= c %>"><%= c.titleize %></option>
     <% end %>
@@ -26,11 +26,11 @@
     </div>
   <% end %>
 
-  <input type="submit" value="SUBMIT" class="btn btn-primary"/>
+  <input type="submit" value="<%= t('form.submit') %>" class="btn btn-primary"/>
 <% end %>
 
 <div class="back-button">
-  <a href="/">BACK TO HOME</a>
+  <a href="/"><%= t('form.back') %></a>
 </div>
 
 <script>
@@ -42,7 +42,7 @@
       <div class="channel">
         <span class="label">${titleize(name)}:</span>
         <input type="hidden" name="hunter[channels_attributes][][channel_name]" value="${name}" />
-        <input type="text" name="hunter[channels_attributes][][url]" value="${value}" class="input-text" placeholder="Input your profile URL" />
+        <input type="text" name="hunter[channels_attributes][][url]" value="${value}" class="input-text" placeholder="<%= t('form.input_url') %>" />
         <%= image_tag 'minus.svg', class: 'remove' %>
       </div>
     `;
