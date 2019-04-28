@@ -23,4 +23,5 @@ class Maker < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :monthly_budget, numericality: { greater_than: 0 }
   validates :business_category, inclusion: { in: BUSINESS_CATEGORIES }
+  validates_uniqueness_of :email
 end
