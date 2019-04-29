@@ -21,6 +21,12 @@ html, body {
   }
 }
 
+body.lan-ko {
+  h1, h2, h3, h4, p {
+    letter-spacing: -0.02em;
+  }
+}
+
 h1, h2, h3, h4 {
   font-family: 'Comfortaa', 'Noto Sans KR', cursive;
   font-weight: 700;
@@ -91,7 +97,7 @@ a {
   display: inline-block;
   cursor: pointer;
   outline: none;
-  padding: 0.625em 2.5em;
+  padding: 0.625em 2.0em;
   font-size: 1.375rem;
   border: 1px solid $primary;
   border-radius: 50vh;
