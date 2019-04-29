@@ -12,7 +12,7 @@ class HunterDashboard < Administrate::BaseDashboard
     email: Field::Email,
     name: Field::String,
     country_code: Field::String,
-    country_name: Field::String,
+    country_name: Field::String.with_options(searchable: false),
     channels: Field::HasMany,
     total_score: Field::Number,
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
