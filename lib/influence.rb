@@ -66,7 +66,9 @@ module Influence
 
     def self.score(username)
       res = Utils.json("https://www.instagram.com/web/search/topsearch/?query=#{username}")
-      res['users'][0]['user']['follower_count']
+      res['users'].each do |u|
+        return u['user']['follower_count'] if u['user']['username'] == username
+      end
     end
   end
 
