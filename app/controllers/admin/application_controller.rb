@@ -8,10 +8,12 @@ module Admin
   class ApplicationController < Administrate::ApplicationController
     http_basic_authenticate_with name: ENV['ADMIN_ID'], password: ENV['ADMIN_PW']
 
-    # Override this value to specify the number of elements to display at a time
-    # on index pages. Defaults to 20.
-    # def records_per_page
-    #   params[:per_page] || 20
-    # end
+    private
+      def order
+        @order ||= Administrate::Order.new(
+          params.fetch(resource_name, {}).fetch(:order, :id),
+          params.fetch(resource_name, {}).fetch(:direction, :desc),
+        )
+      end
   end
 end
