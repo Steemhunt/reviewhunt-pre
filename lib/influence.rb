@@ -96,4 +96,19 @@ module Influence
       ::Steem::CondenserApi.new.get_follow_count(username).result.follower_count
     end
   end
+
+  module Twitch
+    FORMAT = "https://www.twitch.tv/{username}"
+
+    def self.parse(url)
+      Influence.parse(FORMAT, url)
+    end
+
+    def self.score(username)
+      headers = { 'Client-ID' => ENV['TWITCH_CLIENT_ID'] }
+      res = Utils.json("https://api.twitch.tv/helix/users?login=#{username}", headers)
+      res = Utils.json("https://api.twitch.tv/helix/users/follows?to_id=#{res['data'].first['id']}", headers)
+      res['total']
+    end
+  end
 end

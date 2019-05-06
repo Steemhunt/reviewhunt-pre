@@ -3,7 +3,7 @@ require 'influence'
 class Channel < ApplicationRecord
   belongs_to :hunter
 
-  SUPPORTED_CHANNELS = %w(reddit youtube twitter instagram medium steemit others)
+  SUPPORTED_CHANNELS = %w(reddit youtube twitter instagram medium steemit twitch others)
 
   validates_presence_of :channel_name, :url
   validates :channel_name, inclusion: { in: SUPPORTED_CHANNELS }
