@@ -56,6 +56,7 @@ ko:
     monthly_budget: 미국 달러 환산 금액으로 입력하세요
 
   email:
+    title: 리뷰헌트 사전가입이 완료되었습니다!
     hello: 안녕하세요!
     intro: 다음과 같은 내용으로 리뷰헌트 사전 등록이 완료되어 안내 드립니다.
     full_name: 이름
