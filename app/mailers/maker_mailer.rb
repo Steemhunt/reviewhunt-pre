@@ -1,0 +1,2 @@
+class MakerMailer < ApplicationMailer
+end

@@ -1,0 +1,30 @@
+Hi there,
+
+You have successfully pre-registered as a hunter for Reviewhunt! Please review the information that you’ve added:
+
+Full Name: <%= @user.name %>
+Email: <%= @user.email %>
+Country: <%= @user.country_name %>
+
+<%= 'Channels:' if @user.channels.any? %>
+<% @user.channels.each do |channel| %>
+  - <%= channel.channel_name.titleize %>: <%= channel.url %>
+<% end %>
+
+Reviewhunt redefines how companies boost their launching hype by utilising early-adopters who have extensive coverage in their social activities.
+Our target launch is in July, 2019, and we will keep you updated.
+
+If you have any questions, please contact us at admin@hunt.town, or drop by our Discord or Telegram channel.
+We’re very excited to hear your feedback.
+
+Thanks,
+HUNT Team
+https://review.hunt.town
+
+--
+You received this email because you registered on Reviewhunt platform. Please contact us if it was not you who registered.
+
+Contact us via:
+ - Email: admin@hunt.town
+ - Discord: https://discord.gg/ywBqD74
+ - Telegram: https://t.me/steemhunt

@@ -1,0 +1,52 @@
+<div style="max-width: 560px; margin: 0 auto; background: #fff; padding: 40px; font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif; font-size: 15px; line-height: 1.47;">
+  <a href="https://review.hunt.town" target="_blank"><img src="http://localhost:3000/email/logo-circle-clean.png"
+       srcset="http://localhost:3000/email/logo-circle-clean@2x.png 2x,
+               http://localhost:3000/email/logo-circle-clean@3x.png 3x"
+       style="width: 86px; height: 86px; object-fit: contain; display: block; margin: 0 auto; border: 0;"></a>
+
+  <p style="margin-top: 40px;">Hi there,</p>
+
+  <p>
+    You have successfully pre-registered as a hunter for Reviewhunt!
+    Please review the information that you’ve added:
+  </p>
+
+  <hr style="height: 1px; border: none; color: #c6c6c6; background-color: #c6c6c6; margin-top: 30px;">
+  <ul style="list-style: none; font-size: 13px;">
+    <li><span style="color: #8b9699;">Full Name:</span> <%= @user.name %></li>
+    <li><span style="color: #8b9699;">Email:</span> <%= @user.email %></li>
+    <li><span style="color: #8b9699;">Country:</span> <%= @user.country_name %></li>
+
+    <% if @user.channels.any? %>
+      <li><span style="color: #8b9699;">Channels:</span></li>
+    <% end %>
+    <% @user.channels.each do |channel| %>
+      <li style="padding-left: 32px; text-indent: -12px;">
+        - <%= channel.channel_name.titleize %>: <a href="<%= channel.url %>" target="_blank"><%= channel.url %></a>
+      </li>
+    <% end %>
+  </ul>
+  <hr style="height: 1px; border: none; color: #c6c6c6; background-color: #c6c6c6; margin-bottom: 30px;">
+
+  <p>
+    <a href="https://review.hunt.town" target="_blank">Reviewhunt</a> redefines how companies boost their launching hype by utilising early-adopters who have extensive coverage in their social activities. Our target launch is in July, 2019, and we will keep you updated.
+  </p>
+
+  <p>
+    If you have any questions, please contact us at <a href="mailto:admin@hunt.town" target="_blank">admin@hunt.town</a>,
+    or drop by our <a href="https://discord.gg/ywBqD74" target="_blank">Discord</a> or <a href="https://t.me/steemhunt" target="_blank">Telegram</a> channel.
+    We’re very excited to hear your feedback.
+  </p>
+
+  <p>
+    Thanks,<br/>
+    HUNT Team<br/>
+    <a href="https://review.hunt.town" target="_blank">https://review.hunt.town</a>
+  </p>
+
+  <hr style="height: 1px; border: none; color: #c6c6c6; background-color: #c6c6c6; margin-bottom: 30px;">
+
+  <p style="font-style: italic; font-size: 13px; color: #8b9699;">
+    You received this email because you registered on Reviewhunt platform. Please contact us if it was not you who registered.
+  </p>
+</div>
