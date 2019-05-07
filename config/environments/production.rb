@@ -77,7 +77,6 @@ Rails.application.configure do
     domain: 'hunt.town',
     user_name: 'admin@hunt.town',
     password: ENV['EMAIL_PASSWORD'],
-    ssl: true,
     authentication: :plain,
     enable_starttls_auto: true
   }
