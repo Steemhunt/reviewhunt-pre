@@ -13,6 +13,7 @@ class HunterDashboard < Administrate::BaseDashboard
     name: Field::String,
     country_code: Field::String,
     country_name: Field::String.with_options(searchable: false),
+    language: Field::String.with_options(searchable: false),
     channels: Field::HasMany,
     total_score: Field::Number,
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
@@ -29,6 +30,7 @@ class HunterDashboard < Administrate::BaseDashboard
     :email,
     :name,
     :country_name,
+    :language,
     :channels,
     :total_score,
     :created_at
@@ -42,8 +44,9 @@ class HunterDashboard < Administrate::BaseDashboard
     :email,
     :name,
     :country_code,
+    :language,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -54,6 +57,7 @@ class HunterDashboard < Administrate::BaseDashboard
     :email,
     :name,
     :country_code,
+    :language
   ].freeze
 
   # Overwrite this method to customize how hunters are displayed

@@ -15,6 +15,7 @@ class MakerDashboard < Administrate::BaseDashboard
     position: Field::String,
     business_category: Field::String,
     monthly_budget: Field::Number.with_options(prefix: '$', decimals: 2, searchable: false),
+    language: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
     updated_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z')
   }.freeze
@@ -30,6 +31,7 @@ class MakerDashboard < Administrate::BaseDashboard
     :company_name,
     :name,
     :monthly_budget,
+    :language,
     :created_at
   ].freeze
 
@@ -43,6 +45,7 @@ class MakerDashboard < Administrate::BaseDashboard
     :position,
     :business_category,
     :monthly_budget,
+    :language,
     :created_at,
     :updated_at,
   ].freeze
@@ -57,6 +60,7 @@ class MakerDashboard < Administrate::BaseDashboard
     :position,
     :business_category,
     :monthly_budget,
+    :language
   ].freeze
 
   # Overwrite this method to customize how makers are displayed
