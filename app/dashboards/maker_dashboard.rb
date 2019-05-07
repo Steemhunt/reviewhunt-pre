@@ -16,6 +16,7 @@ class MakerDashboard < Administrate::BaseDashboard
     business_category: Field::String,
     monthly_budget: Field::Number.with_options(prefix: '$', decimals: 2, searchable: false),
     language: Field::String.with_options(searchable: false),
+    coupon_code: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z'),
     updated_at: Field::DateTime.with_options(format: '%Y-%m-%dT%H:%M:%S%z')
   }.freeze
@@ -32,6 +33,7 @@ class MakerDashboard < Administrate::BaseDashboard
     :name,
     :monthly_budget,
     :language,
+    :coupon_code,
     :created_at
   ].freeze
 
@@ -46,6 +48,7 @@ class MakerDashboard < Administrate::BaseDashboard
     :business_category,
     :monthly_budget,
     :language,
+    :coupon_code,
     :created_at,
     :updated_at,
   ].freeze
@@ -60,6 +63,7 @@ class MakerDashboard < Administrate::BaseDashboard
     :position,
     :business_category,
     :monthly_budget,
+    :coupon_code,
     :language
   ].freeze
 
