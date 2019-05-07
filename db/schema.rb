@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_162817) do
+ActiveRecord::Schema.define(version: 2019_05_07_155623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_162817) do
     t.string "country_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "language", default: "en"
     t.index ["email"], name: "index_hunters_on_email", unique: true
   end
 
@@ -46,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_04_28_162817) do
     t.decimal "monthly_budget", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "coupon_code"
+    t.string "language", default: "en"
     t.index ["email"], name: "index_makers_on_email", unique: true
   end
 

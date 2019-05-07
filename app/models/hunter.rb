@@ -19,4 +19,12 @@ class Hunter < ApplicationRecord
   def channel_summary
     channels.map { |c| "#{c.channel_name.capitalize} (#{c.score.to_i})" }.join(", ")
   end
+
+  def detect_language
+    if country_code == 'KR' || name =~ /\p{Hangul}/ || email =~ /(\.kr|naver\.com)$/
+      'ko'
+    else
+      nil
+    end
+  end
 end

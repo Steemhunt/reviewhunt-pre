@@ -10,22 +10,23 @@
 
   <hr style="height: 1px; border: none; color: #c6c6c6; background-color: #c6c6c6; margin-top: 30px;">
   <ul style="list-style: none; font-size: 13px;">
+    <li><span style="color: #8b9699;"><%= t('email.company_name') %>:</span> <%= @user.company_name %></li>
     <li><span style="color: #8b9699;"><%= t('email.full_name') %>:</span> <%= @user.name %></li>
     <li><span style="color: #8b9699;"><%= t('email.email') %>:</span> <%= @user.email %></li>
-    <li><span style="color: #8b9699;"><%= t('email.country') %>:</span> <%= @user.country_name %></li>
-
-    <% if @user.channels.any? %>
-      <li><span style="color: #8b9699;"><%= t('email.channels') %>:</span></li>
-    <% end %>
-    <% @user.channels.each do |channel| %>
-      <li style="padding-left: 24px; text-indent: -12px;">
-        - <%= channel.channel_name.titleize %>: <a href="<%= channel.url %>" target="_blank"><%= channel.url %></a>
-      </li>
-    <% end %>
+    <li><span style="color: #8b9699;"><%= t('email.position') %>:</span> <%= @user.position %></li>
+    <li><span style="color: #8b9699;"><%= t('email.business_category') %>:</span> <%= @user.business_category %></li>
+    <li><span style="color: #8b9699;"><%= t('email.monthly_budget') %>:</span> <%= number_to_currency @user.monthly_budget %></li>
   </ul>
   <hr style="height: 1px; border: none; color: #c6c6c6; background-color: #c6c6c6; margin-bottom: 30px;">
 
   <p><%= t('email.reviewhunt').html_safe %></p>
+
+  <p><%= t('email.coupon_desc').html_safe %></p>
+
+  <div style="margin: 30px 0; color: #666; background-color: #f0f0f0; padding: 6px; text-align: center;">
+    <%= @user.coupon_code %>
+  </div>
+
   <p><%= t('email.bye').html_safe %></p>
 
   <p>

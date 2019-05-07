@@ -55,3 +55,20 @@ en:
     heading4: How much is your monthly marketing budget?
     monthly_budget: Monthly budget in USD terms
 
+  email:
+    hello: Hi there,
+    intro: "You have successfully pre-registered for Reviewhunt! Please review the information that you’ve added:"
+    full_name: Full Name
+    email: Email
+    country: Country
+    company_name: Name of Company
+    position: Position at your Company
+    business_category: Business Category
+    monthly_budget: Monthly Marketing budget
+    channels: Channels
+    reviewhunt: '<a href="https://review.hunt.town" target="_blank">Reviewhunt</a> redefines how companies boost their launching hype by utilising early-adopters who have extensive coverage in their social activities. Our target launch is in July, 2019, and we will keep you updated.'
+    coupon_desc: This coupon will double your review credit purchase. It can be used once the platform is live. It will be expire 3 months after Reviewhunt is launched.
+    bye: 'If you have any questions, please contact us at <a href="mailto:admin@hunt.town" target="_blank">admin@hunt.town</a>,
+    or drop by our <a href="https://discord.gg/ywBqD74" target="_blank">Discord</a> or <a href="https://t.me/steemhunt" target="_blank">Telegram</a> channel. We’re very excited to hear your feedback.'
+    thanks: Thanks,
+    just_in_case: You received this email because you registered on Reviewhunt platform. Please contact us if it was not you who registered.

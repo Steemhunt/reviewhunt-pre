@@ -5,6 +5,7 @@ class HuntersController < ApplicationController
 
   def create
     @hunter = Hunter.new(hunter_params)
+    @hunter.language = @hunter.detect_language || I18n.locale.to_s
 
     if @hunter.save
       redirect_to '/', notice: 'Thank you. We’ll contact you soon.'

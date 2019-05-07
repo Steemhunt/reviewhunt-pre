@@ -3,16 +3,20 @@
 <%= t('email.intro') %>
 
 --------------------------
+<%= t('email.company_name') %>: <%= @user.company_name %>
 <%= t('email.full_name') %>: <%= @user.name %>
 <%= t('email.email') %>: <%= @user.email %>
-<%= t('email.country') %>: <%= @user.country_name %>
-<%= t('email.channels') if @user.channels.any? %>
-<% @user.channels.each do |channel| %>
-  - <%= channel.channel_name.titleize %>: <%= channel.url %>
-<% end %>
+<%= t('email.position') %>: <%= @user.position %>
+<%= t('email.business_category') %>: <%= @user.business_category %>
+<%= t('email.monthly_budget') %>: <%= number_to_currency @user.monthly_budget %>
 --------------------------
 
 <%= strip_tags t('email.reviewhunt') %>
+
+<%= strip_tags t('email.coupon_desc') %>
+--------------------------
+<%= @user.coupon_code %>
+--------------------------
 
 <%= strip_tags t('email.bye') %>
 

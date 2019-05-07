@@ -5,6 +5,7 @@ class MakersController < ApplicationController
 
   def create
     @maker = Maker.new(maker_params)
+    @maker.language = @maker.detect_language || I18n.locale.to_s
 
     if @maker.save
       redirect_to '/', notice: 'Thank you. We’ll contact you soon.'
