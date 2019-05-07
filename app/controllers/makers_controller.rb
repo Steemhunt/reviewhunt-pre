@@ -8,6 +8,7 @@ class MakersController < ApplicationController
     @maker.language = @maker.detect_language || I18n.locale.to_s
 
     if @maker.save
+      MakerMailer.with(user: @maker).pre_sign_up.deliver_now
       redirect_to '/', notice: 'Thank you. We’ll contact you soon.'
     else
       render action: 'new'
