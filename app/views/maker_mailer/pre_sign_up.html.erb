@@ -1,7 +1,7 @@
 <div style="max-width: 560px; margin: 0 auto; background: #fff; padding: 40px; font-family: 'Helvetica Neue','Helvetica','Arial',sans-serif; font-size: 15px; line-height: 1.47;">
-  <a href="https://review.hunt.town" target="_blank"><img src="http://localhost:3000/email/logo-circle-clean.png"
-       srcset="http://localhost:3000/email/logo-circle-clean@2x.png 2x,
-               http://localhost:3000/email/logo-circle-clean@3x.png 3x"
+  <a href="https://review.hunt.town" target="_blank"><img src="<%= ENV['ROOT_URL'] %>/email/logo-circle-clean.png"
+       srcset="<%= ENV['ROOT_URL'] %>/email/logo-circle-clean@2x.png 2x,
+               <%= ENV['ROOT_URL'] %>/email/logo-circle-clean@3x.png 3x"
        style="width: 86px; height: 86px; object-fit: contain; display: block; margin: 0 auto; border: 0;"></a>
 
   <p style="margin-top: 40px;"><%= t('email.hello') %></p>
