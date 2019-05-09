@@ -4,7 +4,7 @@ en:
     signup_maker: PRE SIGN-UP<br/>MAKERS
     signup_hunter: PRE SIGN-UP<br/>HUNTERS
   stats_maker:
-    heading: <span class="primary-color">%{maker_count}</span> companies pre signed-up to spend <span class="primary-color">%{total_budget}</span> on a monthly basis.
+    heading: <span class="primary-color">%{maker_count}</span> companies with a monthly marketing budget of <span class="primary-color">%{total_budget}</span> have pre signed-up.
     heading2: Pre sign-up today to earn this limited offer that will double up your review credit purchase.
     text: At Reviewhunt, you can spread impactful review content to hundreds of tech channels such as Reddit, Youtube, and Twitter by utilising over 20,000 blockchain-powered product influencers.
     table_title: Current companies that are pre signed-up so far.
