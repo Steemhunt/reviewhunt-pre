@@ -222,6 +222,9 @@ $(document).ready(function () {
       $toggleButton.css('opacity', '0.3');
     }
   }
-  backgroundAudio.play();
+  var playPromise = backgroundAudio.play();;
+  if (playPromise !== undefined) {
+    playPromise.then(_ => {}).catch(error => {});
+  }
 });
 </script>
