@@ -222,9 +222,20 @@ $(document).ready(function () {
       $toggleButton.css('opacity', '0.3');
     }
   }
-  var playPromise = backgroundAudio.play();;
-  if (playPromise !== undefined) {
-    playPromise.then(_ => {}).catch(error => {});
+
+  function tryPlay() {
+    var playPromise = backgroundAudio.play();;
+    if (playPromise !== undefined) {
+      playPromise.then(_ => {}).catch(error => {
+        $toggleButton.css('opacity', '0.3');
+      });
+    }
   }
+  tryPlay();
+
+  $(window).scroll(function() {
+    tryPlay();
+    $(window).unbind();
+  });
 });
 </script>
