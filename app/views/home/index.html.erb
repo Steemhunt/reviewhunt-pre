@@ -1,22 +1,35 @@
-<div class="main">
-  <a href="<%= I18n.locale == :en ? '/ko' : '/' %>" class="language">
-    <%= I18n.locale == :en ? 'Korean' : 'English' %>
-  </a>
-  <%= image_tag 'logo-circle.svg', class: 'logo-circle' %>
-  <h3 class="primary-color">REVIEWHUNT</h3>
-  <h1><%= t('main.tagline') %></h1>
-  <div class="actions">
-    <a href="<%= I18n.locale %>/makers/new" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
-    <a href="<%= I18n.locale %>/hunters/new" class="btn"><%= t('main.signup_hunter').html_safe %></a>
-  </div>
-  <% unless flash[:notice].blank? %>
-    <div class="thank-you">
-      <%= image_tag 'tick.svg', class: 'tick' %> <%= flash[:notice] %>
+<div class="main-container">
+  <canvas id="fancy-canvas" class="fancy-canvas"></canvas>
+  <div class="main">
+    <div class="right-top">
+      <%= image_tag 'speaker.svg', onClick: "toggleAudio();", class: 'toggle-button' %>
+      <a href="<%= I18n.locale == :en ? '/ko' : '/' %>" class="language">
+        <%= I18n.locale == :en ? 'Korean' : 'English' %>
+      </a>
     </div>
-  <% end %>
-  <div class="siema">
-    <div><%= image_tag 'main-img-1.png', alt: 'Demo Image 1', srcset: { 'main-img-1@2x.png' => '2x', 'main-img-1@3x.png' => '3x' }, class: 'main-img' %></div>
-    <div><%= image_tag 'main-img-2.png', alt: 'Demo Image 2', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %></div>
+    <%= image_tag 'logo-circle.svg', class: 'logo-circle' %>
+    <h3 class="primary-color">REVIEWHUNT</h3>
+    <h1><%= t('main.tagline') %></h1>
+    <div class="actions">
+      <a href="<%= I18n.locale %>/makers/new" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
+      <a href="<%= I18n.locale %>/hunters/new" class="btn"><%= t('main.signup_hunter').html_safe %></a>
+    </div>
+    <% unless flash[:notice].blank? %>
+      <div class="thank-you">
+        <%= image_tag 'tick.svg', class: 'tick' %> <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+
+    <div class="timer-container">
+      CLOSE BETA RELEASE
+      <div id="timer" class="timer">00:00:00</div>
+    </div>
+
+    <div class="siema">
+      <div><%= image_tag 'main-img-1.png', alt: 'Demo Image 1', srcset: { 'main-img-1@2x.png' => '2x', 'main-img-1@3x.png' => '3x' }, class: 'main-img' %></div>
+      <div><%= image_tag 'main-img-2.png', alt: 'Demo Image 2', srcset: { 'main-img-2@2x.png' => '2x', 'main-img-2@3x.png' => '3x' }, class: 'main-img' %></div>
+    </div>
   </div>
 </div>
 
@@ -156,7 +169,7 @@
 <div class="footer mint-gradient">
   <%= image_tag 'logo-circle-clean.svg', class: 'logo-circle' %>
   <h3>REVIEWHUNT</h3>
-  <h2><%= t('reinvented.date') %></h2>
+  <h2>Launch in <span class="timer"></span></h2>
   <div class="actions">
     <a href="<%= I18n.locale %>/makers/new" class="btn btn-primary"><%= t('main.signup_maker').html_safe %></a>
     <a href="<%= I18n.locale %>/hunters/new" class="btn"><%= t('main.signup_hunter').html_safe %></a>
@@ -168,6 +181,7 @@
 </div>
 
 <script>
+$(document).ready(function () {
   const carousel = new Siema({
     selector: '.siema',
     duration: 500,
@@ -177,6 +191,37 @@
   });
 
   const carouselInterval = setInterval(function() {
-    carousel.next();
+    if (!document.hidden) {
+      carousel.next();
+    }
   }, 5000);
+
+  splash();
+  $('#fancy-canvas').height($('.main-container').height());
+
+  $timer = $('.timer');
+  const timerInterval = setInterval(function() {
+    if (!document.hidden) {
+      const timeLeft = timeUntil('2019-07-31T17:43:00.000+09:00');
+      $timer.text(timeLeft);
+      randomSplat();
+    }
+  }, 1000);
+
+  const backgroundAudio = new Audio('<%= audio_path 'dubakupado.mp3' %>');
+  const $toggleButton = $('.toggle-button');
+  window.toggleAudio = function() {
+    if (!backgroundAudio) {
+      return;
+    }
+    if (backgroundAudio.paused) {
+      backgroundAudio.play();
+      $toggleButton.css('opacity', '1.0');
+    } else {
+      backgroundAudio.pause();
+      $toggleButton.css('opacity', '0.3');
+    }
+  }
+  backgroundAudio.play();
+});
 </script>

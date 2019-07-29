@@ -6,14 +6,37 @@ body {
   word-break: keep-all;
 }
 
+.fancy-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
 .main {
-  margin-top: 100px;
+  padding-bottom: 9.375rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
   text-align: center;
 
-  .language {
+  .right-top {
     position: absolute;
     top: 1em;
     right: 1em;
+
+    .toggle-button {
+      width: 28px;
+      height: 28px;
+      vertical-align: top;
+      margin-right: 1rem;
+      cursor: pointer;
+      margin-top: 1.5px;
+    }
+  }
+
+  .language {
     display: inline-block;
     border: 1px solid $primary;
     border-radius: 5px;
@@ -22,7 +45,7 @@ body {
   }
 
   .logo-circle {
-    margin-top: -135px;
+    margin-top: -35px;
     width: 380px;
     height: 380px;
     object-fit: contain;
@@ -75,8 +98,15 @@ body {
     }
   }
 
+  .timer-container {
+    margin-top: 50px;
+    .timer {
+      font-size: 2.65rem;
+    }
+  }
+
   .main-img {
-    margin-top: 100px;
+    margin-top: 40px;
     width: 1020px;
     max-width: 96%;
     height: auto;
@@ -94,7 +124,6 @@ body {
 }
 
 .maker-stats, .hunter-stats, .token-demands {
-  margin-top: 9.375rem;
   padding-top: 9.375rem;
   padding-bottom: 9.375rem;
 
